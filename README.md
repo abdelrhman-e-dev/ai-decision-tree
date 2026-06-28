@@ -1,5 +1,9 @@
 # AI Decision Tree
 
+<div align="center">
+<img width="250" height="250" alt="Image" src="https://github.com/user-attachments/assets/36569981-60f7-48b0-8b60-d892ef184552" />
+</div>
+
 > A WordPress plugin that displays a smart, interactive decision-tree popup on your posts — powered by Google Gemini, OpenAI, or Anthropic Claude — to qualify readers and present a personalized Call to Action.
 
 ---
