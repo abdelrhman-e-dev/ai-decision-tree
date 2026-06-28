@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+:root {
+  --adt-ink: #1B2333;
+  --adt-muted: #6B7280;
+  --adt-accent: #0E7C7B;
+  --adt-accent-dark: #0B5F5E;
+  --adt-surface: #FFFFFF;
+  --adt-border: #E7E9EE;
+  --adt-bg-soft: #F6F8F8;
+}
+
+.adt-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 34, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 99998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.adt-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.adt-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  background: var(--adt-surface);
+  padding: 28px 26px 26px;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px -12px rgba(15, 23, 34, 0.25), 0 4px 16px rgba(15, 23, 34, 0.08);
+  z-index: 99999;
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%) translateY(10px) scale(0.95);
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              visibility 0.35s;
+}
+
+.adt-popup.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
+}
+
+.adt-header {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--adt-border);
+}
+
+.adt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--adt-accent);
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.adt-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--adt-accent);
+  box-shadow: 0 0 0 4px rgba(14, 124, 123, 0.15);
+}
+
+.adt-popup h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--adt-ink);
+  line-height: 1.4;
+}
+
+.adt-content p {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--adt-ink);
+  line-height: 1.6;
+}
+
+.adt-content h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--adt-ink);
+}
+
+.adt-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.adt-answers {
+  display: flex;
+  gap: 10px;
+}
+
+.adt-answer {
+  flex: 1;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: 1.5px solid var(--adt-border);
+  background: var(--adt-bg-soft);
+  color: var(--adt-ink);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.adt-answer:hover {
+  border-color: var(--adt-accent);
+  color: var(--adt-accent-dark);
+  transform: translateY(-1px);
+}
+
+.adt-answer:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.adt-answer:focus-visible {
+  outline: 2px solid var(--adt-accent);
+  outline-offset: 2px;
+}
+
+.adt-contact {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  background: var(--adt-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.adt-contact:hover {
+  background: var(--adt-accent-dark);
+  transform: translateY(-1px);
+}
+
+.adt-contact:focus-visible {
+  outline: 2px solid var(--adt-accent-dark);
+  outline-offset: 2px;
+}
+
+.adt-close {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: var(--adt-bg-soft);
+  color: var(--adt-muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.adt-close:hover {
+  background: var(--adt-border);
+  color: var(--adt-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adt-popup, .adt-overlay {
+    transition: opacity 0.01ms !important;
+  }
+  .adt-popup {
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .adt-popup {
+    width: calc(100vw - 32px);
+    padding: 22px 18px 20px;
+  }
+}

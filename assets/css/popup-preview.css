@@ -1,0 +1,44 @@
+.adt-preview-wrapper {
+
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    padding: 40px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px !important;
+}
+
+.adt-preview-frame {
+    z-index: 1;
+    width: 420px;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Override popup.css positioning for admin preview */
+.adt-preview-frame .adt-popup {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Reset button repurposed as restart */
+.adt-preview-frame .adt-close {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.adt-preview-label {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 12px;
+    text-align: center;
+}
