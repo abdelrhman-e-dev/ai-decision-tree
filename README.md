@@ -1,8 +1,9 @@
 # AI Decision Tree
 
 > [!WARNING]
-> **This plugin is currently under active development and is intended for testing and evaluation purposes only.**
-> Features, APIs, database structure, and behavior may change without notice. It is **not recommended for production websites** at this stage.
+> This plugin is currently in **testing mode** and is under active development.
+> It has been tested only in a local WordPress environment and is **not production-ready**.
+> Expect bugs, breaking changes, and incomplete features while development continues.
 
 <div align="center">
 <img width="250" height="250" alt="Image" src="https://github.com/user-attachments/assets/36569981-60f7-48b0-8b60-d892ef184552" />
